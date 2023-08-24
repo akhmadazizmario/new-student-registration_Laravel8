@@ -75,24 +75,22 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
+                        <h4>Beranda</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/tentangkami">Tentang Kami</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/pendaftaran">Pendaftaran</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/login">Login</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
+                        <h4>Media</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/blogku">Blog</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/galeriku">Galeri</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/prestasiku">Prestasiku</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/eskulku">Ekstrakulikuler</a></li>
                         </ul>
                     </div>
 
