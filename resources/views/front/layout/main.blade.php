@@ -10,8 +10,10 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="/assets/img/favicon.png" rel="icon">
-    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    @foreach ($pengaturan as $p)
+        <link href="{{ asset('storage/' . $p->logo_sekolah) }}" rel="icon">
+        <link href="{{ asset('storage/' . $p->logo_sekolah) }}" rel="apple-touch-icon">
+    @endforeach
 
     <!-- Google Fonts -->
     <link
@@ -65,8 +67,9 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Sekolahku</h3>
                         @foreach ($pengaturan as $p)
+                            <h3>{{ $p->nama_sekolah }}</h3>
+
                             <p>
                                 memberikan pelayanan pendidikan kepada masyarakat yang mudah <br><br>
                                 <strong>Phone:</strong> {{ $p->nohp }}<br>
@@ -95,11 +98,15 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
+
+
+                        @if ($p->logo_sekolah)
+                            <img src="{{ asset('storage/' . $p->logo_sekolah) }}" style="height: 120px;" alt="gambar"
+                                class="img-fluid mt-3">
+                        @else
+                            <img src="/assets_admin/img/profil.png" style="height: 80px;" alt="gambar"
+                                class="img-fluid mt-3">
+                        @endif
                     </div>
 
                 </div>
@@ -112,18 +119,18 @@
             <div class="me-md-auto text-center text-md-start">
                 <div class="copyright">
                     <strong><span>copyright@
-                        <script type="text/javascript">
-                            var creditsyear = new Date();
-                            document.write(creditsyear.getFullYear());
-                        </script>
-                    </span></strong>. All Rights Reserved</span></strong>
+                            <script type="text/javascript">
+                                var creditsyear = new Date();
+                                document.write(creditsyear.getFullYear());
+                            </script>
+                        </span></strong>. All Rights Reserved</span></strong>
                 </div>
                 <div class="credits">
                     <!-- All the links in the footer should remain intact. -->
                     <!-- You can delete the links only if you purchased the pro version. -->
                     <!-- Licensing information: https://bootstrapmade.com/license/ -->
                     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-                    Designed by Sekolah</>
+                    Designed by {{ $p->nama_sekolah }}
                 </div>
             </div>
             <div class="social-links text-center text-md-right pt-3 pt-md-0">
@@ -136,7 +143,8 @@
     </footer><!-- End Footer -->
 
     <div id="preloader"></div>
-    <a href="https://wa.me/{{ $p->nohp }}" class="back-to-top d-flex align-items-center justify-content-center bg-success"><i
+    <a href="https://wa.me/{{ $p->nohp }}"
+        class="back-to-top d-flex align-items-center justify-content-center bg-success"><i
             class="bi bi-whatsapp"></i></a>
     @endforeach
     <!-- Vendor JS Files -->

@@ -49,6 +49,16 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="tentang_sekolah" class="form-label">Tentang/Sejarah Sekolah</label>
+                            @error('tentang_sekolah')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                            <input id="tentang_sekolah" type="hidden" name="tentang_sekolah"
+                                value="{{ old('tentang_sekolah', $pengaturan->tentang_sekolah) }}">
+                            <trix-editor class="bg-white" input="tentang_sekolah"></trix-editor>
+                        </div>
+
+                        <div class="mb-3">
                             <label for="foto_kplsekolah" class="form-label">foto kepala sekolah</label>
                             <input type="hidden" name="oldImage_kplsekolah" value="{{ $pengaturan->foto_kplsekolah }}">
                             @if ($pengaturan->foto_kplsekolah)
@@ -87,11 +97,54 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="grup_wa" class="form-label">Group Wa Siswa Baru</label>
+                            <label for="logo_sekolah" class="form-label">Logo sekolah</label>
+                            <input type="hidden" name="oldImage_logosekolah" value="{{ $pengaturan->logo_sekolah }}">
+                            @if ($pengaturan->logo_sekolah)
+                                <img src="{{ asset('storage/' . $pengaturan->logo_sekolah) }}"
+                                    class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                            @else
+                                <img class="img-preview img-fluid mb-3 col-sm-5">
+                            @endif
+                            <input class="form-control" type="file" id="logo_sekolah" name="logo_sekolah"
+                                @error('logo_sekolah') is-invalid @enderror onchange="previewImage()">
+                            @error('logo_sekolah')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="grup_wa" class="form-label">link Group Wa Siswa Baru</label>
                             <input type="text" class="form-control" id="grup_wa" name="grup_wa"
                                 @error('grup_wa') is-invalid @enderror required autofocus
                                 value="{{ old('grup_wa', $pengaturan->grup_wa) }}">
                             @error('grup_wa')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="nama_sekolah" class="form-label">Nama Sekolah</label>
+                            <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah"
+                                @error('nama_sekolah') is-invalid @enderror required autofocus
+                                value="{{ old('nama_sekolah', $pengaturan->nama_sekolah) }}">
+                            @error('nama_sekolah')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="maps" class="form-label">Link Google Maps</label>
+                            <input type="text" class="form-control" id="maps" name="maps"
+                                @error('maps') is-invalid @enderror required autofocus
+                                value="{{ old('maps', $pengaturan->maps) }}">
+                            @error('maps')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

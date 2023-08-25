@@ -41,7 +41,11 @@ class PengaturanController extends Controller
         $validatedData = $request->validate([
             'kepala_sekolah' => 'required',
             'foto_kplsekolah' => 'nullable|image|file|max:2024',
+            'logo_sekolah' => 'nullable|image|file|max:2024',
             'sambutan' => 'required',
+            'tentang_sekolah' => 'required',
+            'nama_sekolah' => 'required',
+            'maps' => 'required',
             'nohp' => 'required',
             'email' => 'required',
             'grup_wa' => 'required',
@@ -69,6 +73,14 @@ class PengaturanController extends Controller
             }
             //--- mengupdate gambar foto_brosur ---//
             $validatedData['foto_brosur'] = $request->file('foto_brosur')->store('foto-brosur', 'public');
+        }
+        //---- Image delete for logo_sekolah --------//
+        if ($request->file('logo_sekolah')) {
+            if ($request->oldImage_logosekolah) {
+                Storage::delete($request->oldImage_logosekolah); // Use oldImage_brosur instead of oldImage.
+            }
+            //--- mengupdate gambar foto_brosur ---//
+            $validatedData['logo_sekolah'] = $request->file('logo_sekolah')->store('logo-sekolah', 'public');
         }
         ////-----------------///
         $validatedData['user_id'] = auth()->user()->id;

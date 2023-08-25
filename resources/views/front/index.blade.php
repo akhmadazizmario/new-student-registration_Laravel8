@@ -5,7 +5,9 @@
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
             <div class="col-lg-6 shadow p-3 mb-5 card rounded" style="background-color: rgba(255, 255, 255, 0.5);">
-                <h1 style="color: black;">SDN 01 TEGAL</h1>
+                @foreach ($pengaturan as $p)
+                    <h1 style="color: black;">{{ $p->nama_sekolah }}</h1>
+                @endforeach
                 <h3 style="color: black;">Website sistem informasi sekolah resmi</h3>
                 <div class="mb-1">
                     <a href="/daftarsiswa/create" class="btn-get-started scrollto">Pendaftaran</a>
@@ -22,7 +24,9 @@
                 <div class="row">
                     <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="content">
-                            <h3>Kenapa Harus <br> SDN 01 TEGAL?</h3>
+                            @foreach ($pengaturan as $p )
+                                
+                            <h3>Kenapa Harus <br> {{ $p->nama_sekolah }}</h3>
                             <p>
                                 Sekolah yang mengedepankan akademik siswa, membimbing, Mengembangkan dan
                                 melaksanakan model pembelajaran Aktif, Inovatif, Kreatif, Efektif Serta menyenangkan.
@@ -32,6 +36,7 @@
                                 <a href="/tentangkami" class="more-btn">Tentang Sekolah <i
                                         class="bx bx-chevron-right"></i></a>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-lg-8 d-flex align-items-stretch">
@@ -40,17 +45,16 @@
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-receipt"></i>
-                                        <h4>Corporis voluptates sit</h4>
-                                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
-                                            aliquip</p>
+                                        <h4>Fasilitas Pendidikan</h4>
+                                        <p>memberikan ruang kelas, perpustakaan, 
+                                            laboratorium, ruang olahraga, dan area bermain yang aman dan nyaman</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
-                                        <i class="bx bx-cube-alt"></i>
-                                        <h4>Ullamco laboris ladore pan</h4>
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                            deserunt</p>
+                                        <i class="bx bx-user"></i>
+                                        <h4>Tenaga Pendidik</h4>
+                                        <p>pengajar dan guru yang berkualitas serta terlatih dalam bidang pendidikan anak usia dini.</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
@@ -184,7 +188,8 @@
                             <div class="gallery-item">
                                 @if ($g->foto_galeri)
                                     <a href="{{ asset('storage/' . $g->foto_galeri) }}" class="galelry-lightbox">
-                                        <img src="{{ asset('storage/' . $g->foto_galeri) }}" alt="" width="100%">
+                                        <img src="{{ asset('storage/' . $g->foto_galeri) }}" alt=""
+                                            width="100%">
                                     </a>
                                 @endif
                             </div>
@@ -246,73 +251,66 @@
                     <ul>
                         <li data-aos="fade-up">
                             <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                                data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
+                                data-bs-target="#faq-list-1">Mengalami Kendala ketika mendaftar? <i
                                     class="bx bx-chevron-down icon-show"></i><i
                                     class="bx bx-chevron-up icon-close"></i></a>
                             <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                                 <p>
-                                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                                    curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
-                                    non.
+                                    Jika mengalami kendala tidak mendaftar, anda bisa mengirim pesan kepada kami bisa melalui
+                                    whatsap ataupun email yang tertera di website. untuk mengirim pesan lewat whatsapp bisa klik tombol 
+                                    whatsapp di kanan samping.
                                 </p>
                             </div>
                         </li>
 
                         <li data-aos="fade-up" data-aos-delay="100">
                             <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc?
+                                data-bs-target="#faq-list-2" class="collapsed">Apakah Pendaftarannya Berbayar?
                                 <i class="bx bx-chevron-down icon-show"></i><i
                                     class="bx bx-chevron-up icon-close"></i></a>
                             <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                                 <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                    velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.
+                                    Pendaftaranya tentu saja gratis yah bapak/ibu, hati-hati jika ada yang memungut 
+                                    pembayaran itu bukan dari kami. pendaftaran di sini seluruhnya gratis.
                                 </p>
                             </div>
                         </li>
 
                         <li data-aos="fade-up" data-aos-delay="200">
                             <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit?
+                                data-bs-target="#faq-list-3" class="collapsed">Ketika Mendaftar Jaringan Terputus?
                                 <i class="bx bx-chevron-down icon-show"></i><i
                                     class="bx bx-chevron-up icon-close"></i></a>
                             <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                                 <p>
-                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                                    tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
-                                    molestie at elementum eu facilisis sed odio morbi quis
+                                    Jika mengalami kendala jaringan, bisa ganti provider lain yang jaringanya stabil yah bapak/ibu.
                                 </p>
                             </div>
                         </li>
 
                         <li data-aos="fade-up" data-aos-delay="300">
                             <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam
-                                sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
+                                data-bs-target="#faq-list-4" class="collapsed">Ada kesalahan ketika menginput data? 
+                                <i class="bx bx-chevron-down icon-show"></i><i
                                     class="bx bx-chevron-up icon-close"></i></a>
                             <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                                 <p>
-                                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                                    ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
-                                    adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
+                                    ketika ada kesalahan ketika menginput data pendaftaran, secepatnya harus menghubungi kami bapak/ibu, 
+                                    karena data yang anda input akan dicatat di kementrian pendidikan sebagai siswa. dan kami akan
+                                    cek secara berkala untuk menghindari kesalahan data.
                                 </p>
                             </div>
                         </li>
 
                         <li data-aos="fade-up" data-aos-delay="400">
                             <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius
-                                vel pharetra vel turpis nunc eget lorem dolor? <i
+                                data-bs-target="#faq-list-5" class="collapsed">Pengumuman Pendaftaran kapan yah? <i
                                     class="bx bx-chevron-down icon-show"></i><i
                                     class="bx bx-chevron-up icon-close"></i></a>
                             <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
                                 <p>
-                                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo
-                                    integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc
-                                    eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
+                                    untuk pengumuman pendafataran akan kami sampaikan melalui whatsapp/grup whatsapp yang disediakan 
+                                    ketika mendaftar.
                                 </p>
                             </div>
                         </li>
@@ -375,9 +373,18 @@
             </div>
 
             <div>
-                <iframe style="border:0; width: 100%; height: 350px;"
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                    frameborder="0" allowfullscreen></iframe>
+                @foreach ($pengaturan as $p)
+                    <iframe width="100%"
+                        height="400" 
+                        frameborder="0" 
+                        style="border:0" 
+                        src="{{ $p->maps }}" 
+                        allowfullscreen> <!-- Izinkan untuk tampilan penuh -->
+                    </iframe>
+                    {{-- <iframe style="border:0; width: 100%; height: 350px;"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                        frameborder="0" allowfullscreen></iframe> --}}
+                @endforeach
             </div>
         </section><!-- End Contact Section -->
 
