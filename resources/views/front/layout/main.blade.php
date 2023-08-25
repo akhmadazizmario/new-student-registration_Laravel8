@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>website sekolahku- Index</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
     @foreach ($pengaturan as $p)
+        <title>Website Resmi {{ $p->nama_sekolah }}</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+
+        <!-- Favicons -->
+
         <link href="{{ asset('storage/' . $p->logo_sekolah) }}" rel="icon">
         <link href="{{ asset('storage/' . $p->logo_sekolah) }}" rel="apple-touch-icon">
     @endforeach
