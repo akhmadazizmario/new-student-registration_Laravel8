@@ -22,14 +22,15 @@
                                     <p class="text-muted mb-4">Sekolahku negeri tegal</p>
                                 </div>
                             </div>
-                        @endforeach
+                        
                     </div>
                     <div
                         class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                         <h3>Tentang Sekolah</h3>
-                        <p style="text-align: justify;"></p>
+                        <p style="text-align: justify;">{!! $p->tentang_sekolah !!}</p>
                     </div>
                 </div>
+                @endforeach
             </div>
         </section><!-- End About Section -->
     </main>
