@@ -25,8 +25,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3 bg-dark">
                     <strong class="card-title text-white">Data surat masuk</strong>
-                    <a class="btn btn-sm btn-primary float-right rounded " href="/suratmasuk/create"> <i
-                            class="bi bi-person-plus"></i>
+                    <a class="btn btn-sm btn-primary float-right rounded " href="/suratmasuk/create"> <i class="bi bi-envelope-plus"></i>
                         Tambah surat masuk </a>
                 </div>
                 <div class="card-body">

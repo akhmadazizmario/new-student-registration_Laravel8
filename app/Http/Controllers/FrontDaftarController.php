@@ -38,7 +38,7 @@ class FrontDaftarController extends Controller
             'nama_lengkap' => 'required|max:255',
             'nik' => 'required',
             'tempat_lahir' => 'required',
-            'foto' => 'nullable|image|file|max:2024',
+            'foto' => 'nullable|image|file|max:5120',
             'tgl_lahir' => 'required',
             'no_hp' => 'required',
             'jenis_kelamin' => 'required',
