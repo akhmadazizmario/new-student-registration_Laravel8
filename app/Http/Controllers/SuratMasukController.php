@@ -44,7 +44,7 @@ class SuratMasukController extends Controller
         $validatedData = $request->validate([
             'no_surat' => 'required',
             'pengirim' => 'required',
-            'filepdf' => 'nullable|mimes:pdf|file|max:2024',
+            'filepdf' => 'nullable|mimes:pdf|file|max:5120',
             'penerima' => 'required',
             'perihal' => 'required',
         ]);
@@ -79,7 +79,7 @@ class SuratMasukController extends Controller
         $validatedData = $request->validate([
             'no_surat' => 'required',
             'pengirim' => 'required',
-            'filepdf' => 'nullable|mimes:pdf|file|max:2024',
+            'filepdf' => 'nullable|mimes:pdf|file|max:5120',
             'penerima' => 'required',
             'perihal' => 'required',
         ]);

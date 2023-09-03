@@ -35,7 +35,7 @@ class GaleriController extends Controller
         //
         $validatedData = $request->validate([
             'judul' => 'required|max:255',
-            'foto' => 'nullable|image|file|max:2024',
+            'foto' => 'nullable|image|file|max:5120',
         ]);
 
         //--- create image ke folder post-images--///
@@ -75,7 +75,7 @@ class GaleriController extends Controller
         //-- Eksekusi update ---//
         $validatedData = $request->validate([
             'judul' => 'required|max:255',
-            'foto' => 'nullable|image|file|max:2024',
+            'foto' => 'nullable|image|file|max:5120',
         ]);
         //---- Image delete --------//
         if ($request->file('foto_galeri')) {

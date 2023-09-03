@@ -35,7 +35,7 @@ class EskulController extends Controller
         //
         $validatedData = $request->validate([
             'nama_eskul' => 'required|max:255',
-            'foto_eskul' => 'nullable|image|file|max:2024',
+            'foto_eskul' => 'nullable|image|file|max:5120',
             'deskripsi' => 'required',
 
         ]);
@@ -77,7 +77,7 @@ class EskulController extends Controller
         //-- Eksekusi update ---//
         $validatedData = $request->validate([
             'nama_eskul' => 'required|max:255',
-            'foto_eskul' => 'nullable|image|file|max:2024',
+            'foto_eskul' => 'nullable|image|file|max:5120',
             'deskripsi' => 'required',
         ]);
         //---- Image delete --------//

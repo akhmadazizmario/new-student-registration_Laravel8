@@ -50,7 +50,7 @@ class GuruController extends Controller
             'nama_lengkap' => 'required|max:255',
             'email' => 'required',
             'nik' => 'required',
-            'foto' => 'nullable|image|file|max:2024',
+            'foto' => 'nullable|image|file|max:5120',
             'jenjang' => 'required',
             'no_hp' => 'required',
             'alamat' => 'required'
@@ -95,7 +95,7 @@ class GuruController extends Controller
             'nama_lengkap' => 'required|max:255',
             'email' => 'required',
             'nik' => 'required',
-            'foto' => 'image|file|max:2024',
+            'foto' => 'image|file|max:5120',
             'jenjang' => 'required',
             'no_hp' => 'required',
             'alamat' => 'required'
