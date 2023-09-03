@@ -64,7 +64,7 @@ class GuruController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         Guru::create($validatedData);
-        return redirect('/guru')->with('success', 'postingan anda berhasil ditambahkan');
+        return redirect('/guru')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function show($id)
@@ -112,7 +112,7 @@ class GuruController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         Guru::where('id', $gurus->id)->update($validatedData);
-        return redirect('/guru')->with('success', 'postingan anda berhasil diupdate');
+        return redirect('/guru')->with('success', 'Data berhasil diupdate');
     }
 
     public function destroy($id)

@@ -48,7 +48,7 @@ class PrestasiController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         Prestasi::create($validatedData);
-        return redirect('/prestasi')->with('success', 'postingan anda berhasil ditambahkan');
+        return redirect('/prestasi')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function show($id)
@@ -93,7 +93,7 @@ class PrestasiController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         Prestasi::where('id', $prestasi->id)->update($validatedData);
-        return redirect('/prestasi')->with('success', 'postingan anda berhasil diupdate');
+        return redirect('/prestasi')->with('success', 'Data berhasil diupdate');
     }
 
     public function destroy($id)

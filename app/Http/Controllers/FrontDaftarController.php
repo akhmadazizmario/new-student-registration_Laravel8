@@ -10,18 +10,18 @@ use Illuminate\Support\Facades\Auth;
 
 class FrontDaftarController extends Controller
 {
-    
+
     public function index()
     {
         $dataPengaturan = Pengaturan::all();
         return view(
-            'front.selamat',
+            'front.daftarsiswa',
             [
                 'pengaturan' => $dataPengaturan,
             ]
         );
     }
-    
+
     public function create()
     {
         // menambahkan
@@ -56,9 +56,20 @@ class FrontDaftarController extends Controller
             $validatedData['foto'] = $request->file('foto')->store('foto-siswa', 'public');
         }
 
-        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['user_id'] = 1;
 
         Siswa::create($validatedData);
-        return redirect('/daftarsiswa')->with('success', 'postingan anda berhasil ditambahkan');
+        return redirect('/daftarsiswa/show')->with('success', 'anda berhasil mendaftar');
+    }
+
+    public function show()
+    {
+        $dataPengaturan = Pengaturan::all();
+        return view(
+            'front.selamat',
+            [
+                'pengaturan' => $dataPengaturan,
+            ]
+        );
     }
 }

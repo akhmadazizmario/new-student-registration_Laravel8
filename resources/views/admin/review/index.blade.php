@@ -44,12 +44,12 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $b->nama }}</td>
                                         <td>
-                                            @if ($b['sebagai'] == 'kepala_sekolah')
-                                                <p>kepala sekolah</p>
+                                            @if ($b['sebagai'] == 'orang tua siswa')
+                                                <p>Orang Tua Siswa</p>
                                             @elseif ($b['sebagai'] == 'guru')
                                                 <p>Guru</p>
-                                            @elseif ($b['sebagai'] == 'ortu_siswa')
-                                                <p>orang tua siswa</p>
+                                            @elseif ($b['sebagai'] == 'masyarakat')
+                                                <p>Masyarakat</p>
                                             @elseif ($b['sebagai'] == 'other')
                                                 <p>other</p>
                                             @endif

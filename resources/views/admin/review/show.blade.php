@@ -27,12 +27,12 @@
                                 <tr>
                                     <th width="150px">Sebagai</th>
                                     <td> : </td>
-                                    <td>@if ($review['sebagai'] == 'kepala_sekolah')
-                                        <p>kepala sekolah</p>
+                                    <td>@if ($review['sebagai'] == 'orang tua siswa')
+                                        <p>orang tua siswa</p>
                                     @elseif ($review['sebagai'] == 'guru')
                                         <p>Guru</p>
-                                    @elseif ($review['sebagai'] == 'ortu_siswa')
-                                        <p>orang tua siswa</p>
+                                    @elseif ($review['sebagai'] == 'masyarakat')
+                                        <p>Masyarakat</p>
                                     @elseif ($review['sebagai'] == 'other')
                                         <p>other</p>
                                     @endif
