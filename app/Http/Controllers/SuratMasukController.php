@@ -57,7 +57,7 @@ class SuratMasukController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         SuratMasuk::create($validatedData);
-        return redirect('/suratmasuk')->with('success', 'postingan anda berhasil ditambahkan');
+        return redirect('/suratmasuk')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -95,7 +95,7 @@ class SuratMasukController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         SuratMasuk::where('id', $suratmasuk->id)->update($validatedData);
-        return redirect('/suratmasuk')->with('success', 'postingan anda berhasil diupdate');
+        return redirect('/suratmasuk')->with('success', 'Data berhasil diupdate');
     }
 
     public function destroy($id)

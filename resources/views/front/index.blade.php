@@ -94,7 +94,7 @@
                                     @endif
                                     <h5 class="my-3">{{ $p->kepala_sekolah }}</h5>
                                     <p class="text-muted mb-1">Kepala Sekolah</p>
-                                    <p class="text-muted mb-4">Sekolahku negeri tegal</p>
+                                    <p class="text-muted mb-4">{{ $p->nama_sekolah }}</p>
                                 </div>
                             </div>
                     </div>
@@ -336,12 +336,12 @@
                                         <h3>{{ $r->nama }}</h3>
                                         {{-- <h4>{{ $r->sebagai }}</h4> --}}
                                         <h4>
-                                            @if ($r['sebagai'] == 'kepala_sekolah')
-                                                <p>kepala sekolah</p>
+                                            @if ($r['sebagai'] == 'orang tua siswa')
+                                                <p>orang tua siswa</p>
                                             @elseif ($r['sebagai'] == 'guru')
                                                 <p>Guru</p>
-                                            @elseif ($r['sebagai'] == 'ortu_siswa')
-                                                <p>orang tua siswa</p>
+                                            @elseif ($r['sebagai'] == 'masyarakat')
+                                                <p>Masyarakat</p>
                                             @elseif ($r['sebagai'] == 'other')
                                                 <p>other</p>
                                             @endif

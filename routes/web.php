@@ -15,6 +15,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\SuratMasukController;
 use App\Http\Controllers\FrontDaftarController;
+use App\Http\Controllers\FrontReviewController;
 use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\UbahPasswordController;
 
@@ -102,3 +103,4 @@ Route::get('/galeriku', [FrontController::class, 'galeriku']);
 Route::resource('/daftarsiswa', FrontDaftarController::class);
 Route::get('/prestasiku', [FrontController::class, 'prestasiku']);
 Route::get('/eskulku', [FrontController::class, 'eskulku']);
+Route::resource('/reviewku', FrontReviewController::class);

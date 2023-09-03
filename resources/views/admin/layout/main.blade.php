@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sekolahku - Dashboard</title>
+    <title>Administrator</title>
 
     <!-- Custom fonts for this template-->
     <link href="/assets_admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,10 +47,15 @@
     </div>
 
     <!-- Footer -->
-    <footer class="sticky-footer bg-white">
+    <footer class="sticky-footer bg-white mt-5">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2021</span>
+                <strong><span>copyright@
+                        <script type="text/javascript">
+                            var creditsyear = new Date();
+                            document.write(creditsyear.getFullYear());
+                        </script>
+                    </span></strong>. All Rights Reserved</span></strong>
             </div>
         </div>
     </footer>
@@ -157,7 +162,7 @@
         }
     </script>
 
-    
+
 
 
 </body>

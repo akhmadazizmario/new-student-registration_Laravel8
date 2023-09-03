@@ -56,7 +56,7 @@ class SuratKeluarController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         SuratKeluar::create($validatedData);
-        return redirect('/suratkeluar')->with('success', 'postingan anda berhasil ditambahkan');
+        return redirect('/suratkeluar')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -94,7 +94,7 @@ class SuratKeluarController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         SuratKeluar::where('id', $suratkeluar->id)->update($validatedData);
-        return redirect('/suratkeluar')->with('success', 'postingan anda berhasil diupdate');
+        return redirect('/suratkeluar')->with('success', 'Data berhasil diupdate');
     }
 
     public function destroy($id)

@@ -19,7 +19,7 @@
                                     @endif
                                     <h5 class="my-3">{{ $p->kepala_sekolah }}</h5>
                                     <p class="text-muted mb-1">Kepala Sekolah</p>
-                                    <p class="text-muted mb-4">Sekolahku negeri tegal</p>
+                                    <p class="text-muted mb-4">{{ $p->nama_sekolah }}</p>
                                 </div>
                             </div>
                         

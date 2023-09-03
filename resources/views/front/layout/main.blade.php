@@ -66,7 +66,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
+                    <div class="col-lg-5 col-md-6 footer-contact">
                         @foreach ($pengaturan as $p)
                             <h3>{{ $p->nama_sekolah }}</h3>
 
@@ -87,17 +87,17 @@
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Media</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="/blogku">Blog</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="/galeriku">Galeri</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="/prestasiku">Prestasiku</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/prestasiku">Prestasi</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="/eskulku">Ekstrakulikuler</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
 
 
                         @if ($p->logo_sekolah)

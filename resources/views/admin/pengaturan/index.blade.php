@@ -18,72 +18,18 @@
                     </div>
                 @endif
             </div>
-            {{-- <div class="card shadow mb-4">
-                <div class="card-header py-3 bg-dark">
-                    <strong class="card-title text-white">Data Pengaturan</strong>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-
-                        <table id="example" class="table table-bordered" style="width: 100%">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Foto Kepala sekolah</th>
-                                    <th>kepala sekolah</th>
-                                    <th>buka pendaftaran</th>
-                                    <th>akhir pendaftaran</th>
-                                    <th>Grup_Wa siswa baru</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($pengaturan as $g)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>
-                                            @if ($g->foto_kplsekolah)
-                                                <div style="max-height: 100px;width:100px; overflow:hidden;">
-                                                    <img src="{{ asset('storage/' . $g->foto_kplsekolah) }}" alt="gambar"
-                                                        class="img-fluid mt-3">
-                                                </div>
-                                            @else
-                                                <img src="/assets_admin/img/profil.png" style="height: 80px;" alt="gambar"
-                                                    class="img-fluid mt-3">
-                                            @endif
-                                        </td>
-                                        <td>{{ $g->kepala_sekolah }}</td>
-                                        <td>{{ $g->tgl_pendaftaran_awal }}</td>
-                                        <td>{{ $g->tgl_pendaftaran_akhir }}</td>
-                                        <td><a href="{{ $g->grup_wa }}" class="btn btn-success"><i
-                                                    class="bi bi-whatsapp"></i> Wa grup</a></td>
-                                        <td>
-                                            <center>
-                                                <a href="/pengaturan/{{ $g->id }}/edit"
-                                                    class="btn btn-primary text-decoration-none text-white">
-                                                    <i class="bi bi-pencil-square"></i> edit</a>
-                                            </center>
-                                        </td>
-                                    </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div> --}}
 
             @foreach ($pengaturan as $g)
+                <h4>Pengaturan </h4>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
                         <div class="card">
 
                             <div class="card-body">
 
 
-                                <h4>Pengaturan </h4>
-                                <hr>
-                                <table id="bootstrap-data-table-export"
-                                    class=" table table-sm table-hover table-borderless">
+
+                                <table id="bootstrap-data-table-export" class=" table table-sm table-hover table-borderless">
 
                                     <tr>
                                         <th width="150px">Foto Kepala Sekolah</th>
@@ -145,7 +91,7 @@
                                         <td> : </td>
                                         <td>{{-- <img src="{{ asset('storage/' . $gurus->foto) }}" alt="" width="80px"> --}}
                                             @if ($g->logo_sekolah)
-                                                <div style="max-height: 100px;width:100px; overflow:hidden;">
+                                                <div style="max-height: 135px;width:100px; overflow:hidden;">
                                                     <img src="{{ asset('storage/' . $g->logo_sekolah) }}" alt="gambar"
                                                         class="img-fluid mt-3">
                                                 </div>
@@ -162,7 +108,16 @@
                                         <td>{{ $g->email }}
                                         </td>
                                     </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <table id="bootstrap-data-table-export"
+                                    class=" table table-sm table-hover table-borderless">
                                     <tr style="background-color: rgba(210, 247, 252, 0.521);">
                                         <th width="150px">Nama Sekolah</th>
                                         <td> : </td>
@@ -170,14 +125,18 @@
                                         </td>
                                     </tr>
 
-                                    <tr style="background-color: rgba(210, 247, 252, 0.521);">
+                                    <tr>
                                         <th width="150px">Link Maps</th>
                                         <td> : </td>
-                                        <td>{{ $g->maps }}
+                                        @php
+                                            $words = str_word_count($g->maps, 1); // Mengubah teks menjadi array kata-kata
+                                            $limitedWords = implode(' ', array_slice($words, 0, 60)); // Mengambil 100 kata pertama dan menggabungkannya kembali
+                                        @endphp
+                                        <td>{{ $limitedWords }}
                                         </td>
                                     </tr>
 
-                                    <tr>
+                                    <tr style="background-color: rgba(210, 247, 252, 0.521);">
                                         <th width="150px">No Telp</th>
                                         <td> : </td>
                                         <td>{{ $g->nohp }}
@@ -185,7 +144,7 @@
                                     </tr>
 
 
-                                    <tr style="background-color: rgba(210, 247, 252, 0.521);">
+                                    <tr>
                                         <th width="150px">Sambutan Kepala Sekolah</th>
                                         <td> : </td>
                                         @php
@@ -234,6 +193,11 @@
                                                 <i class="bi bi-pencil-square"></i> edit</a>
                                         </th>
                                     </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             @endforeach
 
             </table>

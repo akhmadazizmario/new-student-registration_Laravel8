@@ -16,8 +16,7 @@
                         <div class="mb-3">
                             <label for="nama" class="form-label">nama lengkap</label>
                             <input type="text" class="form-control" id="nama" name="nama"
-                                @error('nama') is-invalid @enderror required autofocus
-                                value="{{ old('nama') }}">
+                                @error('nama') is-invalid @enderror required autofocus value="{{ old('nama') }}">
                             @error('nama')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -40,9 +39,9 @@
                             <label for="sebagai" class="form-label">review sebagai</label>
                             <select class="form-control" name="sebagai" id="sebagai" required>
                                 <option value="">:: Pilih ::</option>
-                                <option value="kepala_sekolah">Kepala Sekolah</option>
-                                <option value="guru">guru</option>
-                                <option value="ortu_siswa">orang tua siswa</option>
+                                <option value="orang tua siswa">Orang Tua Siswa</option>
+                                <option value="masyarakat">Masyarakat</option>
+                                <option value="guru">Guru</option>
                                 <option value="other">other</option>
                             </select>
                         </div>

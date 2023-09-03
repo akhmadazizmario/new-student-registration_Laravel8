@@ -65,7 +65,7 @@ class SiswaController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         Siswa::create($validatedData);
-        return redirect('/siswa')->with('success', 'postingan anda berhasil ditambahkan');
+        return redirect('/siswa')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function show($id)
@@ -123,7 +123,7 @@ class SiswaController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         Siswa::where('id', $siswas->id)->update($validatedData);
-        return redirect('/siswa')->with('success', 'postingan anda berhasil diupdate');
+        return redirect('/siswa')->with('success', 'Data berhasil diupdate');
     }
 
     public function destroy($id)

@@ -43,7 +43,7 @@ class ReviewController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
 
         Review::create($validatedData);
-        return redirect('/review')->with('success', 'postingan anda berhasil ditambahkan');
+        return redirect('/review')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function show($id)

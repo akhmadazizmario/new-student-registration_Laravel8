@@ -10,9 +10,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 bg-dark">
                             <strong class="card-title text-white">Pendaftaran Siswa Baru</strong>
-                            <a class="btn btn-sm btn-danger float-right rounded" href="/"> <i
-                                    class="fa fa-plus-square-o"></i>
-                                Kembali </a>
+                            
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -133,9 +131,9 @@
 
                                             <div class="mb-3">
                                                 <label for="no_hp" class="form-label">no hp</label>
-                                                <input type="number" class="form-control" id="no_hp" name="no_hp"
+                                                <input type="text" class="form-control" id="no_hp" name="no_hp"
                                                     @error('no_hp') is-invalid @enderror required autofocus
-                                                    value="{{ old('no_hp') }}">
+                                                    value="{{ old('no_hp') }}" oninput="formatPhoneNumber()">
                                                 @error('no_hp')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -172,24 +170,13 @@
                                                     value="diproses">
                                             </div>
 
-                                            {{-- <div class="mb-3">
-                                        <label for="foto" class="form-label">upload foto</label>
-                                        <img class="img-preview img-fluid mb-3 col-sm-5">
-                                        <input class="form-control" type="file" id="foto" name="foto"
-                                            @error('foto') is-invalid @enderror onchange="previewImage()">
-                                        @error('foto')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div> --}}
                                             <hr>
                                             <div class="mt-5">
                                                 <button type="submit" class="btn btn-primary text-white">Daftar</button>
                                                 <a href="/" class="btn btn-danger">Kembali</a>
                                             </div>
                                         @else
-                                            <h2 class="mt-5 mb-5 text-center"><strong>Maaf, pendaftaran belum dibuka atau telah ditutup.</strong></h2>
+                                            <h2 class="mt-5 mb-5 text-center"><strong>Maaf, pendaftaran Sudah ditutup.</strong></h2>
                                         @endif
 
                                     </form>
@@ -221,5 +208,28 @@
         oFReader.onload = function(oFREvent) {
             imgPreview.src = oFREvent.target.result;
         }
+    }
+</script>
+
+<script>
+    function formatPhoneNumber() {
+        let inputNohp = document.getElementById('no_hp');
+        let nohpValue = inputNohp.value;
+
+        // Hapus semua karakter non-angka dari nomor telepon
+        nohpValue = nohpValue.replace(/\D/g, '');
+
+        // Jika nomor telepon dimulai dengan '0', hapus awalan '0'
+        if (nohpValue.startsWith('0')) {
+            nohpValue = nohpValue.substring(1);
+        }
+
+        // Jika nomor telepon tidak diawali dengan "62", tambahkan "62" pada awal nomor telepon
+        if (!nohpValue.startsWith('62')) {
+            nohpValue = '62' + nohpValue;
+        }
+
+        // Set nilai input nomor telepon dengan nilai yang sudah diubah
+        inputNohp.value = nohpValue;
     }
 </script>

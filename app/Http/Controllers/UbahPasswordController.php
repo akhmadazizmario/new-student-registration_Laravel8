@@ -41,6 +41,6 @@ class UbahPasswordController extends Controller
         $validatedData['password'] = bcrypt($request->password);
 
         User::where('id', Auth::user()->id)->first()->update($validatedData);
-        return redirect('/profil')->with('success', 'profil anda berhasil diupdate');
+        return redirect('/profil')->with('success', 'Password berhasil diupdate');
     }
 }
