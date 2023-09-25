@@ -5,7 +5,8 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="/pengaturan" class="ml-auto d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="bi bi-gear"></i> Pengaturan</a>
+            <a href="/pengaturan" class="ml-auto d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    class="bi bi-gear"></i> Pengaturan</a>
             <hr>
         </div>
 
@@ -137,7 +138,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">nama lengkap</th>
-                                    <th scope="col">alamat</th>
+                                    {{-- <th scope="col">alamat</th> --}}
                                     <th scope="col">no hp</th>
                                     <th scope="col">status</th>
                                 </tr>
@@ -147,17 +148,17 @@
                                     <tr>
                                         <th>{{ $loop->iteration }}</th>
                                         <td>{{ $s->nama_lengkap }}</td>
-                                        <td>{!! $s->alamat !!}</td>
+                                        {{-- <td>{!! $s->alamat !!}</td> --}}
                                         <td>{{ $s->no_hp }}</td>
                                         <td>
                                             @if ($s['status'] == 'diproses')
-                                                <a href="{{ $s->status }}" title="Klik untuk merubah"><span
+                                                <a href="" title="Klik untuk merubah"><span
                                                         class="badge badge-warning">diproses</span></a>
                                             @elseif ($s['status'] == 'aktif')
-                                                <a href="{{ $s->status }}" title="Klik untuk merubah"><span
+                                                <a href="" title="Klik untuk merubah"><span
                                                         class="badge badge-primary">Aktif</span></a>
                                             @elseif ($s['status'] == 'tidak aktif')
-                                                <a href="{{ $s->status }}" title="Klik untuk merubah"><span
+                                                <a href="" title="Klik untuk merubah"><span
                                                         class="badge badge-danger">tidak Aktif</span></a>
                                             @endif
                                         </td>

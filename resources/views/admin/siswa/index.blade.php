@@ -67,13 +67,13 @@
                                         {{-- <td>{{ $s->status }}</td> --}}
                                         <td>
                                             @if ($s['status'] == 'diproses')
-                                                <a href="{{ $s->status }}" title="Klik untuk merubah"><span
+                                                <a href="" title="Klik untuk merubah"><span
                                                         class="badge badge-warning">diproses</span></a>
                                             @elseif ($s['status'] == 'aktif')
-                                                <a href="{{ $s->status }}" title="Klik untuk merubah"><span
+                                                <a href="" title="Klik untuk merubah"><span
                                                         class="badge badge-primary">Aktif</span></a>
                                             @elseif ($s['status'] == 'tidak aktif')
-                                                <a href="{{ $s->status }}" title="Klik untuk merubah"><span
+                                                <a href="" title="Klik untuk merubah"><span
                                                         class="badge badge-danger">tidak Aktif</span></a>
                                             @endif
 
@@ -86,7 +86,6 @@
                                                 <a href="/siswa/{{ $s->id }}/edit"
                                                     class="btn btn-warning text-decoration-none text-white">
                                                     <i class="bi bi-pencil-square"></i> edit</a>
-
                                                 <form action="/siswa/{{ $s->id }}" method="post" class="d-inline">
                                                     @method('delete')
                                                     @csrf
