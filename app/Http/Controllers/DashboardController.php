@@ -22,7 +22,7 @@ class DashboardController extends Controller
         $jumlahsuratmasuk = SuratMasuk::count();
         $jumlahsuratkeluar = SuratKeluar::count();
         $jumlahPrestasi = Prestasi::count();
-        $siswabaru = Siswa::take(5)->get();
+        $siswabaru = Siswa::latest()->take(5)->get();
         $reviewbaru = Review::take(5)->get();
         $dataChartSiswa = Siswa::all();
         $dataCounts = $dataChartSiswa->groupBy(function ($item) {
