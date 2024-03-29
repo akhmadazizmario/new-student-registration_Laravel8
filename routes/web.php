@@ -12,12 +12,15 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FrontBlogController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\SuratMasukController;
 use App\Http\Controllers\FrontDaftarController;
 use App\Http\Controllers\FrontReviewController;
 use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\UbahPasswordController;
+use App\Http\Controllers\FrontPrestasikuController;
+use App\Http\Controllers\FrontExtrakulikulerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,9 +101,12 @@ Route::resource('/pengaturan', PengaturanController::class)->middleware('auth');
 //-------------------------------------------------------------------------------//
 Route::resource('/', FrontController::class);
 Route::get('/tentangkami', [FrontController::class, 'tentangkami']);
-Route::get('/blogku', [FrontController::class, 'blogku']);
+// Route::get('/blogku', [FrontController::class, 'blogku']);
 Route::get('/galeriku', [FrontController::class, 'galeriku']);
 Route::resource('/daftarsiswa', FrontDaftarController::class);
 Route::get('/prestasiku', [FrontController::class, 'prestasiku']);
-Route::get('/eskulku', [FrontController::class, 'eskulku']);
+// Route::get('/eskulku', [FrontController::class, 'eskulku']);
 Route::resource('/reviewku', FrontReviewController::class);
+Route::resource('/prestasiku', FrontPrestasikuController::class);
+Route::resource('/blogku', FrontBlogController::class);
+Route::resource('/eskulku', FrontExtrakulikulerController::class);

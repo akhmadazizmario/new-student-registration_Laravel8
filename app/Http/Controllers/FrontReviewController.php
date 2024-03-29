@@ -35,6 +35,7 @@ class FrontReviewController extends Controller
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
             'sebagai' => 'required',
+            'jenis_kelamin' => 'required',
             'deskripsi' => 'required',
         ]);
 
@@ -54,5 +55,4 @@ class FrontReviewController extends Controller
             ]
         );
     }
-
 }

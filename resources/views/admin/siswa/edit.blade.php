@@ -40,7 +40,8 @@
                         <div class="mb-3">
                             <label for="tempat_lahir" class="form-label">tempat lahir</label>
                             <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-                                @error('tempat_lahir') is-invalid @enderror required autofocus value="{{ $siswas->tempat_lahir }}">
+                                @error('tempat_lahir') is-invalid @enderror required autofocus
+                                value="{{ $siswas->tempat_lahir }}">
                             @error('tempat_lahir')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -51,7 +52,8 @@
                         <div class="mb-3">
                             <label for="tgl_lahir" class="form-label">tgl_lahir</label>
                             <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir"
-                                @error('tgl_lahir') is-invalid @enderror required autofocus value="{{ $siswas->tgl_lahir }}">
+                                @error('tgl_lahir') is-invalid @enderror required autofocus
+                                value="{{ $siswas->tgl_lahir }}">
                             @error('tgl_lahir')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -93,7 +95,8 @@
                         <div class="mb-3">
                             <label for="pekerjaan_ayah" class="form-label">pekerjaan ayah</label>
                             <input type="text" class="form-control" id="pekerjaan_ayah" name="pekerjaan_ayah"
-                                @error('pekerjaan_ayah') is-invalid @enderror required autofocus value="{{ $siswas->pekerjaan_ayah }}">
+                                @error('pekerjaan_ayah') is-invalid @enderror required autofocus
+                                value="{{ $siswas->pekerjaan_ayah }}">
                             @error('pekerjaan_ayah')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -104,7 +107,8 @@
                         <div class="mb-3">
                             <label for="pekerjaan_ibu" class="form-label">pekerjaan_ibu</label>
                             <input type="text" class="form-control" id="pekerjaan_ibu" name="pekerjaan_ibu"
-                                @error('pekerjaan_ibu') is-invalid @enderror required autofocus value="{{ $siswas->pekerjaan_ibu }}">
+                                @error('pekerjaan_ibu') is-invalid @enderror required autofocus
+                                value="{{ $siswas->pekerjaan_ibu }}">
                             @error('pekerjaan_ibu')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -115,7 +119,8 @@
                         <div class="mb-3">
                             <label for="no_hp" class="form-label">no hp</label>
                             <input type="number" class="form-control" id="no_hp" name="no_hp"
-                                @error('no_hp') is-invalid @enderror required autofocus value="{{ $siswas->no_hp }}">
+                                @error('no_hp') is-invalid @enderror required autofocus value="{{ $siswas->no_hp }}"
+                                oninput="formatPhoneNumber()">
                             @error('no_hp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -128,11 +133,6 @@
                             <select class="form-control" name="agama" id="agama" required>
                                 <option value="{{ $siswas->agama }}">{{ $siswas->agama }}</option>
                                 <option value="islam">islam</option>
-                                <option value="kristen">kristen</option>
-                                <option value="protestan">protestan</option>
-                                <option value="hindu">hindu</option>
-                                <option value="konghucu">konghucu</option>
-                                <option value="budha">budha</option>
                             </select>
                         </div>
 
@@ -146,6 +146,18 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="tgl_observasi" class="form-label">tgl_observasi</label>
+                            <input type="date" class="form-control" id="tgl_observasi" name="tgl_observasi"
+                                @error('tgl_observasi') is-invalid @enderror required autofocus
+                                value="{{ $siswas->tgl_observasi }}">
+                            @error('tgl_observasi')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
                             <label for="status" class="form-label">status</label>
                             <select class="form-control" name="status" id="status" required>
                                 <option value="{{ $siswas->status }}">{{ $siswas->status }}</option>
@@ -156,7 +168,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="foto" class="form-label">upload foto</label>
+                            <label for="foto" class="form-label">upload foto (* Tidak Wajib)</label>
                             <img class="img-preview img-fluid mb-3 col-sm-5">
                             <input class="form-control" type="file" id="foto" name="foto"
                                 @error('foto') is-invalid @enderror onchange="previewImage()">
@@ -179,3 +191,26 @@
         </div>
     </div>
 @endsection
+
+<script>
+    function formatPhoneNumber() {
+        let inputNohp = document.getElementById('no_hp');
+        let nohpValue = inputNohp.value;
+
+        // Hapus semua karakter non-angka dari nomor telepon
+        nohpValue = nohpValue.replace(/\D/g, '');
+
+        // Jika nomor telepon dimulai dengan '0', hapus awalan '0'
+        if (nohpValue.startsWith('0')) {
+            nohpValue = nohpValue.substring(1);
+        }
+
+        // Jika nomor telepon tidak diawali dengan "62", tambahkan "62" pada awal nomor telepon
+        if (!nohpValue.startsWith('62')) {
+            nohpValue = '62' + nohpValue;
+        }
+
+        // Set nilai input nomor telepon dengan nilai yang sudah diubah
+        inputNohp.value = nohpValue;
+    }
+</script>

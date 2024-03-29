@@ -20,6 +20,7 @@ class CreateReviewsTable extends Migration
             $table->string('nama')->nullable();
             $table->string('sebagai')->nullable();
             $table->text('deskripsi')->nullable();
+            $table->text('jenis_kelamin')->nullable();
         });
     }
 

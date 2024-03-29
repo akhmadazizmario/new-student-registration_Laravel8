@@ -10,7 +10,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 bg-dark">
                             <strong class="card-title text-white">Pendaftaran Siswa Baru</strong>
-                            
+
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -50,8 +50,9 @@
                                             <div class="mb-3">
                                                 <label for="tempat_lahir" class="form-label">tempat lahir</label>
                                                 <input type="text" class="form-control" id="tempat_lahir"
-                                                    name="tempat_lahir" @error('tempat_lahir') is-invalid @enderror required
-                                                    autofocus value="{{ old('tempat_lahir') }}">
+                                                    placeholder="contoh: Tegal" name="tempat_lahir"
+                                                    @error('tempat_lahir') is-invalid @enderror required autofocus
+                                                    value="{{ old('tempat_lahir') }}">
                                                 @error('tempat_lahir')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -130,7 +131,7 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="no_hp" class="form-label">no hp</label>
+                                                <label for="no_hp" class="form-label">no hp (whatsapp)</label>
                                                 <input type="text" class="form-control" id="no_hp" name="no_hp"
                                                     @error('no_hp') is-invalid @enderror required autofocus
                                                     value="{{ old('no_hp') }}" oninput="formatPhoneNumber()">
@@ -146,11 +147,6 @@
                                                 <select class="form-control" name="agama" id="agama" required>
                                                     <option value="">:: Pilih Agama ::</option>
                                                     <option value="islam">islam</option>
-                                                    <option value="kristen">kristen</option>
-                                                    <option value="protestan">protestan</option>
-                                                    <option value="hindu">hindu</option>
-                                                    <option value="konghucu">konghucu</option>
-                                                    <option value="budha">budha</option>
                                                 </select>
                                             </div>
 
@@ -176,7 +172,8 @@
                                                 <a href="/" class="btn btn-danger">Kembali</a>
                                             </div>
                                         @else
-                                            <h2 class="mt-5 mb-5 text-center"><strong>Maaf, pendaftaran Sudah ditutup.</strong></h2>
+                                            <h2 class="mt-5 mb-5 text-center"><strong>Maaf, pendaftaran Sudah
+                                                    ditutup.</strong></h2>
                                         @endif
 
                                     </form>

@@ -5,11 +5,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="bi bi-buildings"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Sekolahku</div>
+            <div class="sidebar-brand-text mx-3">SD IT Bongkok</div>
         </a>
 
         <!-- Divider -->
@@ -48,7 +48,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/siswa">
                 <i class="fas fa-fw fa-users" style="color: white"></i>
-                <span style="color: white">Data Siswa Baru</span></a>
+                <span style="color: white">Data Siswa</span></a>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
@@ -130,6 +130,7 @@
 
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <h3> <strong class="ml-4" style="color: rgb(2, 2, 147);">Management Platform 👋</strong></h3>
 
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">

@@ -24,11 +24,13 @@
                                         href="/login">x</a></button>
                             </div>
                         @endif
-                        <div class="col-lg-6 d-none shadow p-3 mb-5 rounded d-lg-block" style="background-image: url('/assets/img/sekolah.jpg');height:400px;background-size:cover;"></div>
+                        @foreach ($pengaturan as $p)
+                        <div class="col-lg-6 d-none p-3 mb-5 rounded d-lg-block" style="background-image: url('{{ asset('storage/' . $p->logo_sekolah) }}');height:500px;background-size:cover;"></div>
+                        @endforeach
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Sekolahku!</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Login Admin!</h1>
                                 </div>
                                 <form action="/login" method="post" class="user">
                                     @csrf
@@ -52,9 +54,9 @@
 
                                 </form>
                                 <hr>
-                                <div class="text-center">
+                                {{-- <div class="text-center">
                                     <a class="small" href="">Forgot Password?</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

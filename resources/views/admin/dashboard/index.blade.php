@@ -19,7 +19,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold  text-uppercase mb-1" style="color: rgb(3, 87, 3);">
-                                    Data Siswa Baru</div>
+                                    Data Siswa </div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlah_siswa }}</div>
                             </div>
                             <div class="col-auto">
@@ -233,8 +233,8 @@
                 </div>
             </div>
 
+
+
         </div>
-
-
     </div>
 @endsection

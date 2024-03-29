@@ -54,7 +54,8 @@ class SiswaController extends Controller
             'alamat' => 'required',
             'pekerjaan_ayah' => 'required',
             'pekerjaan_ibu' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            'tgl_observasi' => 'nullable',
         ]);
 
         //--- create image ke folder post-images--///
@@ -109,7 +110,8 @@ class SiswaController extends Controller
             'alamat' => 'required',
             'pekerjaan_ayah' => 'required',
             'pekerjaan_ibu' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            'tgl_observasi' => 'nullable'
         ]);
         //---- Image delete --------//
         if ($request->file('foto')) {
@@ -156,6 +158,8 @@ class SiswaController extends Controller
             'agama',
             'pekerjaan_ayah',
             'pekerjaan_ibu',
+            'created_at',
+            'tgl_observasi',
             'status'
         )->get();
 

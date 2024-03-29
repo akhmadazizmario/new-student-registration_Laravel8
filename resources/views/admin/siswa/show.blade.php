@@ -107,6 +107,17 @@
                                     <td>{{ $siswas->agama }}
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th width="150px">Tanggal Daftar</th>
+                                    <td>:</td>
+                                    <td>{{ $siswas->created_at }}</td>
+                                </tr>
+                                <tr>
+                                    <th width="150px">tgl_observasi</th>
+                                    <td>:</td>
+
+                                    <td>{{ $siswas->tgl_observasi }}</td>
+                                </tr>
 
                                 <tr>
                                     <th width="150px">status</th>

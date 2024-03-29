@@ -16,13 +16,15 @@
                                 <div class="shadow d-flex align-items-stretch">
                                     <div class="thumbnail">
                                         <div class="container">
-                                            @if ($article->foto_eskul)
-                                                <img src="{{ asset('storage/' . $article->foto_eskul) }}" alt=""
-                                                    width="100%">
-                                            @endif
-                                            <div class="caption">
-                                                <h3 class="mt-3 text-center">{{ $article->nama_eskul }}</h3>
-                                            </div>
+                                            <a href="/eskulku/{{ $article->id }}">
+                                                @if ($article->foto_eskul)
+                                                    <img src="{{ asset('storage/' . $article->foto_eskul) }}" alt=""
+                                                        width="100%">
+                                                @endif
+                                                <div class="caption">
+                                                    <h3 class="mt-3 text-center">{{ $article->nama_eskul }}</h3>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
