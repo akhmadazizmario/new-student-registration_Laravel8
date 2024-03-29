@@ -35,9 +35,9 @@
                                         <th width="150px">Foto Kepala Sekolah</th>
                                         <td> : </td>
                                         <td>{{-- <img src="{{ asset('storage/' . $gurus->foto) }}" alt="" width="80px"> --}}
-                                            @if ($g->kplsekolah)
+                                            @if ($g->foto_kplsekolah)
                                                 <div style="max-height: 100px;width:100px; overflow:hidden;">
-                                                    <img src="{{ asset('storage/' . $g->kplsekolah) }}" alt="gambar"
+                                                    <img src="{{ asset('storage/' . $g->foto_kplsekolah) }}" alt="gambar"
                                                         class="img-fluid mt-3">
                                                 </div>
                                             @else
@@ -142,7 +142,6 @@
                                         <td>{{ $g->nohp }}
                                         </td>
                                     </tr>
-
 
                                     <tr>
                                         <th width="150px">Sambutan Kepala Sekolah</th>

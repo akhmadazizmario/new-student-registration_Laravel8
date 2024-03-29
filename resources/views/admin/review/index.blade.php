@@ -21,7 +21,8 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3 bg-dark">
                     <strong class="card-title text-white">Data Review</strong>
-                    <a class="btn btn-sm btn-primary float-right rounded " href="/review/create"> <i class="bi bi-chat-left-quote"></i>
+                    <a class="btn btn-sm btn-primary float-right rounded " href="/review/create"> <i
+                            class="bi bi-chat-left-quote"></i>
                         Tambah Review </a>
                 </div>
                 <div class="card-body">
@@ -47,10 +48,8 @@
                                                 <p>Orang Tua Siswa</p>
                                             @elseif ($b['sebagai'] == 'guru')
                                                 <p>Guru</p>
-                                            @elseif ($b['sebagai'] == 'masyarakat')
-                                                <p>Masyarakat</p>
-                                            @elseif ($b['sebagai'] == 'other')
-                                                <p>other</p>
+                                            @elseif ($b['sebagai'] == 'alumni')
+                                                <p>alumni</p>
                                             @endif
                                         </td>
                                         @php

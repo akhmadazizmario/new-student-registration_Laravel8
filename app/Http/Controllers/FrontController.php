@@ -9,6 +9,7 @@ use App\Models\Pengaturan;
 use App\Models\Prestasi;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
@@ -17,7 +18,7 @@ class FrontController extends Controller
     {
         $dataPengaturan = Pengaturan::all();
         $galeri = Galeri::take(8)->get();
-        $blog = Blog::take(8)->get();
+        $blog = Blog::take(4)->get();
         $prestasi = Prestasi::take(8)->get();
         $review = Review::all();
         return view(
@@ -27,7 +28,7 @@ class FrontController extends Controller
                 'galeri' => $galeri,
                 'blog' => $blog,
                 'prestasi' => $prestasi,
-                'review'=> $review
+                'review' => $review,
             ]
         );
     }
@@ -43,23 +44,23 @@ class FrontController extends Controller
         );
     }
 
-    public function blogku()
-    {
-        $dataPengaturan = Pengaturan::all();
-        $searchQuery = request('search');
+    // public function blogku()
+    // {
+    //     $dataPengaturan = Pengaturan::all();
+    //     $searchQuery = request('search');
 
-        // Lakukan pencarian berdasarkan judul blog yang mengandung kata kunci tertentu
-        $blog = Blog::where('judul', 'like', '%' . $searchQuery . '%')
-            ->orWhere('deskripsi', 'like', '%' . $searchQuery . '%')
-            ->get();
-        return view(
-            'front.blogku',
-            [
-                'pengaturan' => $dataPengaturan,
-                'blogku' => $blog,
-            ]
-        );
-    }
+    //     // Lakukan pencarian berdasarkan judul blog yang mengandung kata kunci tertentu
+    //     $blog = Blog::where('judul', 'like', '%' . $searchQuery . '%')
+    //         ->orWhere('deskripsi', 'like', '%' . $searchQuery . '%')
+    //         ->get();
+    //     return view(
+    //         'front.blogku',
+    //         [
+    //             'pengaturan' => $dataPengaturan,
+    //             'blogku' => $blog,
+    //         ]
+    //     );
+    // }
 
     public function galeriku()
     {
@@ -71,34 +72,34 @@ class FrontController extends Controller
         ]);
     }
 
-    public function prestasiku()
-    {
-        $dataPengaturan = Pengaturan::all();
-        $searchQuery = request('search');
+    // public function prestasiku()
+    // {
+    //     $dataPengaturan = Pengaturan::all();
+    //     $searchQuery = request('search');
 
-        // Lakukan pencarian berdasarkan judul blog yang mengandung kata kunci tertentu
-        $prestasiku = Prestasi::where('nama_prestasi', 'like', '%' . $searchQuery . '%')
-            ->orWhere('deskripsi', 'like', '%' . $searchQuery . '%')
-            ->get();
-        return view(
-            'front.prestasiku',
-            [
-                'pengaturan' => $dataPengaturan,
-                'prestasiku' => $prestasiku,
-            ]
-        );
-    }
+    //     // Lakukan pencarian berdasarkan judul blog yang mengandung kata kunci tertentu
+    //     $prestasiku = Prestasi::where('nama_prestasi', 'like', '%' . $searchQuery . '%')
+    //         ->orWhere('deskripsi', 'like', '%' . $searchQuery . '%')
+    //         ->get();
+    //     return view(
+    //         'front.prestasiku',
+    //         [
+    //             'pengaturan' => $dataPengaturan,
+    //             'prestasiku' => $prestasiku,
+    //         ]
+    //     );
+    // }
 
-    public function eskulku()
-    {
-        $dataPengaturan = Pengaturan::all();
-        $eskulku =  Eskul::all();
-        return view(
-            'front.ekstrakulikulerku',
-            [
-                'pengaturan' => $dataPengaturan,
-                'eskulku' => $eskulku,
-            ]
-        );
-    }
+    // public function eskulku()
+    // {
+    //     $dataPengaturan = Pengaturan::all();
+    //     $eskulku =  Eskul::all();
+    //     return view(
+    //         'front.ekstrakulikulerku',
+    //         [
+    //             'pengaturan' => $dataPengaturan,
+    //             'eskulku' => $eskulku,
+    //         ]
+    //     );
+    // }
 }

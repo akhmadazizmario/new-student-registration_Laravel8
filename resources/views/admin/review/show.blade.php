@@ -8,14 +8,15 @@
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Review dari {{ $review->nama }}</strong>
-                        <a class="btn btn-sm btn-danger float-right" href="/review"> <i class="fa fa-arrow-left"></i> kembali </a>
+                        <a class="btn btn-sm btn-danger float-right" href="/review"> <i class="fa fa-arrow-left"></i> kembali
+                        </a>
                     </div>
                     <div class="card-body">
                         <div class="col-md-6">
                             <h4>Data Review</h4>
                             <hr>
                             <table id="bootstrap-data-table-export" class="table table-sm table-hover table-borderless">
-            
+
 
                                 <tr>
                                     <th width="150px">Nama Lengkap</th>
@@ -27,15 +28,14 @@
                                 <tr>
                                     <th width="150px">Sebagai</th>
                                     <td> : </td>
-                                    <td>@if ($review['sebagai'] == 'orang tua siswa')
-                                        <p>orang tua siswa</p>
-                                    @elseif ($review['sebagai'] == 'guru')
-                                        <p>Guru</p>
-                                    @elseif ($review['sebagai'] == 'masyarakat')
-                                        <p>Masyarakat</p>
-                                    @elseif ($review['sebagai'] == 'other')
-                                        <p>other</p>
-                                    @endif
+                                    <td>
+                                        @if ($review['sebagai'] == 'orang tua siswa')
+                                            <p>orang tua siswa</p>
+                                        @elseif ($review['sebagai'] == 'guru')
+                                            <p>Guru</p>
+                                        @elseif ($review['sebagai'] == 'alumni')
+                                            <p>alumni</p>
+                                        @endif
                                     </td>
                                 </tr>
 

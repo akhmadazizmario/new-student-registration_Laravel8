@@ -25,16 +25,18 @@
                                         <div class="container">
                                             @if ($article->foto_blog)
                                                 <img src="{{ asset('storage/' . $article->foto_blog) }}" alt=""
-                                                    width="100%">
+                                                width="100%" height="200px">
                                             @endif
                                             <div class="caption">
-                                                <h3 class="mt-3">{{ $article->judul }}</h3>
-                                                @php
+                                                <h3 class="mt-3">{{ Str::limit($article->judul, 17, '...') }}</h3>
+                                                {{-- @php
                                                     $words = str_word_count($article->deskripsi, 1); // Mengubah teks menjadi array kata-kata
                                                     $limitedWords = implode(' ', array_slice($words, 0, 100)); // Mengambil 100 kata pertama dan menggabungkannya kembali
                                                 @endphp
-                                                <p>{!! $limitedWords !!}</p>
-                                                <p><a href="" class="btn btn-primary"
+                                                <p>{!! $limitedWords !!}</p> --}}
+
+                                                <p class="mt-3" style="text-align: justify">{!! implode(' ', array_slice(str_word_count(strip_tags($article->deskripsi), 1), 0, 30)) !!}</p>
+                                                <p><a href="/blogku/{{ $article->id }}" class="btn btn-primary"
                                                         role="button">Lihat</a></p>
                                             </div>
                                         </div>

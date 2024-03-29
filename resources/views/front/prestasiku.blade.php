@@ -8,7 +8,7 @@
                 <div class="section-title">
                     <h2>Prestasi</h2>
                 </div>
-                <form action="/blogku">
+                <form action="/prestasiku">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Cari prestasi...." name="search"
                             value="{{ request('search') }}">
@@ -30,12 +30,7 @@
                                             <div class="caption">
                                                 <h3 class="mt-3">{{ $article->nama_prestasi }}</h3>
                                                 <p><strong>peraih: {{ $article->nama_lengkap }}</strong></p>
-                                                @php
-                                                    $words = str_word_count($article->deskripsi, 1); // Mengubah teks menjadi array kata-kata
-                                                    $limitedWords = implode(' ', array_slice($words, 0, 100)); // Mengambil 100 kata pertama dan menggabungkannya kembali
-                                                @endphp
-                                                <p>{!! $limitedWords !!}</p>
-                                                <p><a href="" class="btn btn-primary"
+                                                <p><a href="/prestasiku/{{ $article->id }}" class="btn btn-primary"
                                                         role="button">Lihat</a></p>
                                             </div>
                                         </div>

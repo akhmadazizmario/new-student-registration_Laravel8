@@ -17,6 +17,7 @@
                                 @if ($g->foto_galeri)
                                     <a href="{{ asset('storage/' . $g->foto_galeri) }}" class="galelry-lightbox">
                                         <img src="{{ asset('storage/' . $g->foto_galeri) }}" alt="" width="100%">
+                                        <h5 class="text-dark text-center">{{ $g->judul }}</h5>
                                     </a>
                                 @endif
                             </div>

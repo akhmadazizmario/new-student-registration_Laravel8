@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengaturan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,13 @@ class LoginController extends Controller
     //
     public function index()
     {
-        return view('login.index');
+        $dataPengaturan = Pengaturan::all();
+        return view(
+            'login.index',
+            [
+                'pengaturan' => $dataPengaturan,
+            ]
+        );
     }
 
     // authenntikasi

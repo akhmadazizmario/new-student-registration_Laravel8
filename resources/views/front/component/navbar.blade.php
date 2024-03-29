@@ -16,9 +16,10 @@
      <header id="header" class="fixed-top">
          <div class="container d-flex align-items-center">
 
-             <h1 class="logo me-auto"><a href="index.html">
+             <h1 class="logo me-auto"><a href="/">
                      @if ($p->logo_sekolah)
-                         <img src="{{ asset('storage/' . $p->logo_sekolah) }}" style="height: 80px;" alt="gambar" class="img-fluid mt-3">
+                         <img src="{{ asset('storage/' . $p->logo_sekolah) }}" style="height: 80px;" alt="gambar"
+                             class="img-fluid mt-3">
                      @else
                          <img src="/assets_admin/img/profil.png" style="height: 80px;" alt="gambar"
                              class="img-fluid mt-3">
@@ -40,11 +41,34 @@
                      </li>
                      <li><a class="nav-link scrollto" href="/prestasiku">Prestasi</a></li>
                      <li><a class="nav-link scrollto" href="/eskulku">Ekstrakulikuler</a></li>
-                     <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+                     {{-- <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
                          <ul>
                              <li><a href="/login">Administrator</a></li>
                          </ul>
-                     </li>
+                     </li> --}}
+
+                     {{-- @auth
+                         <li><a href="/dashboard" class="nav-link"><strong>MyDashboard</strong>
+                         </li>
+                     @else
+                         <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+                             <ul>
+                                 <li><a href="/login">Administrator</a></li>
+                             </ul>
+                         </li>
+                     @endauth --}}
+                     @guest <!-- Menampilkan menu Admin saat belum login -->
+                         <li class="dropdown">
+                             <a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+                             <ul>
+                                 <li><a href="/login">Administrator</a></li>
+                             </ul>
+                         </li>
+                     @endguest
+
+                     @auth <!-- Menampilkan menu MyDashboard saat sudah login -->
+                         <li><a href="/dashboard" class="nav-link"><strong>My Dashboard</strong></a></li>
+                     @endauth
                  </ul>
                  <i class="bi bi-list mobile-nav-toggle"></i>
              </nav><!-- .navbar -->

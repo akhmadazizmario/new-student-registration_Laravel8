@@ -31,6 +31,7 @@ class CreateSiswasTable extends Migration
             $table->string('pekerjaan_ibu');
             $table->char('status');
             $table->date('tgl_lahir');
+            $table->date('tgl_observasi')->nullable();
         });
     }
 

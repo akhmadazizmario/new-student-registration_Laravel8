@@ -21,7 +21,7 @@
                             <div class=" mb-3" style="max-width: 540px;">
                                 <div class="row no-gutters">
                                     <div class="col-md-4 mb-3">
-                                        <img src="/assets_admin/img/profil.png" class="card-img-top" alt="profil"
+                                        <img src="/assets_admin/img/undraw_profile.svg" class="card-img-top" alt="profil"
                                             height="100%">
 
                                     </div>
@@ -38,7 +38,9 @@
                                                 <a href="/profil/{{ $user->id }}/edit" class="text text-white"><i
                                                         class="fas fa-user-edit"></i>
                                                     UbahProfil</a>
-                                            </div> <a class="btn btn-danger"href="/ubahpassword/{{ $user->id }}/edit">Ubah Password</a>
+                                            </div> <a
+                                                class="btn btn-danger"href="/ubahpassword/{{ $user->id }}/edit">Ubah
+                                                Password</a>
                                         </div>
                                     </div>
                                 </div>

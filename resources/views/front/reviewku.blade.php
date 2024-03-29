@@ -34,9 +34,17 @@
                                             <select class="form-control" name="sebagai" id="sebagai" required>
                                                 <option value="">:: Pilih ::</option>
                                                 <option value="orang tua siswa">Orang Tua Siswa</option>
-                                                <option value="masyarakat">Masyarakat</option>
                                                 <option value="guru">Guru</option>
-                                                <option value="other">other</option>
+                                                <option value="alumni">Alumni</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="jenis_kelamin" class="form-label">Jenis Kelamin ?</label>
+                                            <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
+                                                <option value="">:: Pilih ::</option>
+                                                <option value="L">Laki-Laki</option>
+                                                <option value="P">Perempuan</option>
                                             </select>
                                         </div>
 

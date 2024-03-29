@@ -42,8 +42,10 @@ class SiswaExport implements FromCollection, WithHeadings
                 'ibu' => $siswas->ibu,
                 'pekerjaan_ayah' => $siswas->pekerjaan_ayah,
                 'pekerjaan_ibu' => $siswas->pekerjaan_ibu,
+                'created_at' => $siswas->created_at,
                 'status' => $siswas->status,
-                'agama' => $siswas->agama
+                'agama' => $siswas->agama,
+                'tgl_observasi' => $siswas->tgl_observasi
                 // Tambahkan kolom lainnya sesuai kebutuhan
             ];
         });
@@ -65,8 +67,10 @@ class SiswaExport implements FromCollection, WithHeadings
                 'ibu',
                 'pekerjaan_ayah',
                 'pekerjaan_ibu',
+                'tanggal daftar',
                 'status',
                 'agama',
+                'tanggal Observasi',
             // Tambahkan judul kolom lainnya sesuai dengan data yang ingin diexport
         ];
     }

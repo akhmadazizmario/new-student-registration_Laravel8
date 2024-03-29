@@ -24,6 +24,24 @@
                             @enderror
                         </div>
 
+                        <div class="mb-3">
+                            <label for="sebagai" class="form-label">review sebagai</label>
+                            <select class="form-control" name="sebagai" id="sebagai" required>
+                                <option value="">:: Pilih ::</option>
+                                <option value="orang tua siswa">Orang Tua Siswa</option>
+                                <option value="guru">Guru</option>
+                                <option value="alumni">Alumni</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                            <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
+                                <option value="">:: Pilih ::</option>
+                                <option value="L">Laki-laki</option>
+                                <option value="P">Perempuan</option>
+                            </select>
+                        </div>
 
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">deskripsi</label>
@@ -35,21 +53,9 @@
                         </div>
 
 
-                        <div class="mb-3">
-                            <label for="sebagai" class="form-label">review sebagai</label>
-                            <select class="form-control" name="sebagai" id="sebagai" required>
-                                <option value="">:: Pilih ::</option>
-                                <option value="orang tua siswa">Orang Tua Siswa</option>
-                                <option value="masyarakat">Masyarakat</option>
-                                <option value="guru">Guru</option>
-                                <option value="other">other</option>
-                            </select>
-                        </div>
-
-
                         <hr>
                         <div class="mt-5">
-                            <button type="submit" class="btn btn-primary text-white">Tambah Reviw</button>
+                            <button type="submit" class="btn btn-primary text-white">Tambah Review</button>
                             <a href="/review" class="btn btn-danger">Kembali</a>
                         </div>
 

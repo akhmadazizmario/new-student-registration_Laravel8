@@ -63,20 +63,22 @@
             <th>Nik</th>
             <th>Tempat, Tgl Lahir</th>
             <th>No Hp</th>
+            <th>agama</th>
             <th>Jenis Kelamin</th>
-            <th>Status</th>
+            <th>Tanggal Daftar</th>
         </tr>
-        <tr>
-            @foreach ($data as $d)
+        @foreach ($data as $d)
+            <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $d->nama_lengkap }}</td>
                 <td>{{ $d->nik }}</td>
                 <td>{{ $d->tempat_lahir }}, {{ $d->tgl_lahir }}</td>
                 <td>{{ $d->no_hp }}</td>
+                <td>{{ $d->agama }}</td>
                 <td>{{ $d->jenis_kelamin }}</td>
-                <td>{{ $d->status }}</td>
-            @endforeach
-        </tr>
+                <td>{{ $d->created_at }}</td>
+            </tr>
+        @endforeach
     </table>
 
 </body>

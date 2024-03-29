@@ -127,11 +127,6 @@
                             <select class="form-control" name="agama" id="agama" required>
                                 <option value="">:: Pilih Agama ::</option>
                                 <option value="islam">islam</option>
-                                <option value="kristen">kristen</option>
-                                <option value="protestan">protestan</option>
-                                <option value="hindu">hindu</option>
-                                <option value="konghucu">konghucu</option>
-                                <option value="budha">budha</option>
                             </select>
                         </div>
 

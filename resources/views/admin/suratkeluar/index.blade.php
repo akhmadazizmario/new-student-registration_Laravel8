@@ -18,19 +18,26 @@
                     </div>
                 @endif
             </div>
-            <a href="/suratkeluarexportexcel" class="btn btn-success mb-3"><i class="bi bi-file-earmark-spreadsheet"></i> Export
+            <!--------------->
+
+            <!-- Tombol Laporan-->
+            <a href="/suratkeluarexportexcel" class="btn btn-success mb-3"><i class="bi bi-file-earmark-spreadsheet"></i>
+                Export
                 Excel</a>
             <a href="/suratkeluarexportpdf" class="btn btn-danger mb-3"><i class="bi bi-filetype-pdf"></i> Export
                 Pdf</a>
+            <!--------->
+
+            <!------ Table surat keluar ------->
             <div class="card shadow mb-4">
                 <div class="card-header py-3 bg-dark">
                     <strong class="card-title text-white">Data surat keluar</strong>
-                    <a class="btn btn-sm btn-primary float-right rounded " href="/suratkeluar/create"> <i class="bi bi-envelope-plus"></i>
+                    <a class="btn btn-sm btn-primary float-right rounded " href="/suratkeluar/create"> <i
+                            class="bi bi-envelope-plus"></i>
                         Tambah surat keluar </a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-
                         <table id="example" class="table table-bordered" style="width: 100%">
                             <thead>
                                 <tr>
@@ -49,7 +56,8 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>
                                             @if ($s->filepdf)
-                                                <a href="{{ asset('storage/' . $s->filepdf) }}" class="btn btn-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Lihat File</a>
+                                                <a href="{{ asset('storage/' . $s->filepdf) }}" class="btn btn-primary"><i
+                                                        class="bi bi-file-earmark-pdf-fill"></i> Lihat File</a>
                                             @else
                                                 <p>File kosong</p>
                                             @endif
@@ -64,7 +72,8 @@
                                                     class="btn btn-warning text-decoration-none text-white">
                                                     <i class="bi bi-pencil-square"></i> edit</a>
 
-                                                <form action="/suratkeluar/{{ $s->id }}" method="post" class="d-inline">
+                                                <form action="/suratkeluar/{{ $s->id }}" method="post"
+                                                    class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger border-0"
@@ -81,7 +90,7 @@
                     </div>
                 </div>
             </div>
+            <!-------------->
         </div>
-
     </section>
 @endsection

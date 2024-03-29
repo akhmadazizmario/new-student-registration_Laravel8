@@ -18,10 +18,12 @@
                     </div>
                 @endif
             </div>
+            <p><strong> Laporan Siswa :</strong> </p>
             <a href="/siswaexportexcel" class="btn btn-success mb-3"><i class="bi bi-file-earmark-spreadsheet"></i> Export
                 Excel</a>
             <a href="/siswaexportpdf" class="btn btn-danger mb-3"><i class="bi bi-filetype-pdf"></i> Export
                 Pdf</a>
+            <hr>
             <div class="card shadow mb-4">
                 <div class="card-header py-3 bg-dark">
                     <strong class="card-title text-white">Data Siswa Baru</strong>
@@ -36,11 +38,12 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Foto</th>
+                                    {{-- <th>Foto</th> --}}
                                     <th>Nama</th>
                                     <th>Nik</th>
                                     <th>Tempat, Tgl Lahir</th>
                                     <th>No Hp</th>
+                                    <th>Kirim Pesan</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -49,7 +52,7 @@
                                 @foreach ($siswas as $s)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>
+                                        {{-- <td>
                                             @if ($s->foto)
                                                 <div style="max-height: 100px;width:100px; overflow:hidden;">
                                                     <img src="{{ asset('storage/' . $s->foto) }}" alt="gambar"
@@ -59,21 +62,23 @@
                                                 <img src="/assets_admin/img/profil.png" style="height: 80px;" alt="gambar"
                                                     class="img-fluid mt-3">
                                             @endif
-                                        </td>
+                                        </td> --}}
                                         <td>{{ $s->nama_lengkap }}</td>
                                         <td>{{ $s->nik }}</td>
                                         <td>{{ $s->tempat_lahir }}, {{ $s->tgl_lahir }}</td>
                                         <td>{{ $s->no_hp }}</td>
+                                        <td><a href="https://wa.me/{{ $s->no_hp }}?text= Hallo {{ $s->nama_lengkap }} Selamat telah Kamu Diterima di SD Mejasem" 
+                                            class="btn btn-success"><i class="bi bi-whatsapp"></i> sent wa</a></td>
                                         {{-- <td>{{ $s->status }}</td> --}}
                                         <td>
                                             @if ($s['status'] == 'diproses')
-                                                <a href="{{ $s->status }}" title="Klik untuk merubah"><span
+                                                <a href="" title="Klik untuk merubah"><span
                                                         class="badge badge-warning">diproses</span></a>
                                             @elseif ($s['status'] == 'aktif')
-                                                <a href="{{ $s->status }}" title="Klik untuk merubah"><span
+                                                <a href="" title="Klik untuk merubah"><span
                                                         class="badge badge-primary">Aktif</span></a>
                                             @elseif ($s['status'] == 'tidak aktif')
-                                                <a href="{{ $s->status }}" title="Klik untuk merubah"><span
+                                                <a href="" title="Klik untuk merubah"><span
                                                         class="badge badge-danger">tidak Aktif</span></a>
                                             @endif
 
@@ -86,7 +91,6 @@
                                                 <a href="/siswa/{{ $s->id }}/edit"
                                                     class="btn btn-warning text-decoration-none text-white">
                                                     <i class="bi bi-pencil-square"></i> edit</a>
-
                                                 <form action="/siswa/{{ $s->id }}" method="post" class="d-inline">
                                                     @method('delete')
                                                     @csrf
