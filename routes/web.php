@@ -21,6 +21,7 @@ use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\UbahPasswordController;
 use App\Http\Controllers\FrontPrestasikuController;
 use App\Http\Controllers\FrontExtrakulikulerController;
+use App\Http\Controllers\Frontquran;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,3 +111,6 @@ Route::resource('/reviewku', FrontReviewController::class);
 Route::resource('/prestasiku', FrontPrestasikuController::class);
 Route::resource('/blogku', FrontBlogController::class);
 Route::resource('/eskulku', FrontExtrakulikulerController::class);
+
+//-- Halaman About ----//
+Route::resource('/quran', Frontquran::class);

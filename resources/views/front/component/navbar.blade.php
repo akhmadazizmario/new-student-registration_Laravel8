@@ -39,6 +39,7 @@
                              <li><a href="/galeriku">Galery Sekolah</a></li>
                          </ul>
                      </li>
+                     <li><a class="nav-link scrollto" href="/quran">Membaca Al-Qur'an</a></li>
                      <li><a class="nav-link scrollto" href="/prestasiku">Prestasi</a></li>
                      <li><a class="nav-link scrollto" href="/eskulku">Ekstrakulikuler</a></li>
                      {{-- <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>

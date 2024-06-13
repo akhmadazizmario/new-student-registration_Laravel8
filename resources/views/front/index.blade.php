@@ -228,7 +228,8 @@
                                                 </h3>
                                                 {{-- <p>{!! $article->deskripsi !!}</p> --}}
                                                 <p class="mt-3">{!! implode(' ', array_slice(str_word_count(strip_tags($article->deskripsi), 1), 0, 30)) !!}</p>
-                                                <p><a href="" class="btn btn-primary" role="button">Lihat</a></p>
+                                                <p><a href="/blogku/{{ $article->id }}" class="btn btn-primary"
+                                                        role="button">Lihat</a></p>
                                             </div>
                                         </div>
                                     </div>

@@ -20,23 +20,7 @@ class DatabaseSeeder extends Seeder
         User::create(
             [
                 'name' => 'Aziz',
-                'email' => 'aziz@gmail.com',
-                'password' => bcrypt('12345')
-            ]
-        );
-
-        User::create(
-            [
-                'name' => 'admin1',
-                'email' => 'admin1@gmail.com',
-                'password' => bcrypt('12345')
-            ]
-        );
-
-        User::create(
-            [
-                'name' => 'admin2',
-                'email' => 'admin2@gmail.com',
+                'email' => 'admin@gmail.com',
                 'password' => bcrypt('12345')
             ]
         );
@@ -44,7 +28,7 @@ class DatabaseSeeder extends Seeder
         Pengaturan::create(
             [
                 'kepala_sekolah' => 'bapaku',
-                'sambutan' => 'assalam',
+                'sambutan' => 'assalamualaikum',
                 'user_id' => 1,
             ]
         );

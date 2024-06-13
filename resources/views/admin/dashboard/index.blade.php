@@ -210,14 +210,12 @@
                                         <th>{{ $loop->iteration }}</th>
                                         <td>{{ $rb->nama }}</td>
                                         <td>
-                                            @if ($rb['sebagai'] == 'kepala_sekolah')
-                                                <p>kepala sekolah</p>
+                                            @if ($rb['sebagai'] == 'orang tua siswa')
+                                                <p>Orang Tua Siswa</p>
                                             @elseif ($rb['sebagai'] == 'guru')
                                                 <p>Guru</p>
-                                            @elseif ($rb['sebagai'] == 'ortu_siswa')
-                                                <p>orang tua siswa</p>
-                                            @elseif ($rb['sebagai'] == 'other')
-                                                <p>other</p>
+                                            @elseif ($rb['sebagai'] == 'alumni')
+                                                <p>alumni</p>
                                             @endif
                                         </td>
                                         @php

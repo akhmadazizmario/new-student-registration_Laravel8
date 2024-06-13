@@ -3,13 +3,13 @@
 @section('container')
     <main id="main"> <br><br><br>
         <!-- ======= Services Section ======= -->
-        <section id="services" class="services">
+        <section id="services1" class="services1">
             <div class="container-fluid mt-4">
                 <div class="row">
                     @if ($blogku->foto_blog)
                         <div style="text-align: center">
-                            <img src="{{ asset('storage/' . $blogku->foto_blog) }}" alt="gambar"
-                                class="img-fluid mt-3" width="50%">
+                            <img src="{{ asset('storage/' . $blogku->foto_blog) }}" alt="gambar" class="img-fluid mt-3"
+                                width="50%">
                         </div>
                     @else
                         <img src="/assets_admin/img/profil.png" style="height: 80px;" alt="gambar" class="img-fluid mt-3">
